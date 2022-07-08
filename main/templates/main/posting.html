@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <title>상세 페이지</title>
+    <style>
+        a{
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            background-color: #78a278;
+            border-radius: 3px;
+        }
+        #con{
+            text-align: center;
+        }
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header" style="background-color: #78a278; height: 50px; font-size: 30px; font-weight: bold; color: white;">
+    emirim
+    </div>
+    <div id="con">
+        <h1 style="color: #78a278">상세 페이지</h1>
+        <p> 제목 : {{post.postname}}</p>
+        <p> 내용 : {{post.contents}}</p>
+        {% if post.mainphoto %}
+            <img src = "{{ post.mainphoto.url }}" alt="" height="600">
+            <br>
+        {% endif %}
+        <br>
+        <a href="/blog/">목록</a>
+        <a href="/blog/{{post.pk}}/remove">삭제</a>
+    </div>
+</body>
+</html>
